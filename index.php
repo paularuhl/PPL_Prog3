@@ -51,6 +51,8 @@ switch ($method) {
                 case '/importe/mensual':
                     echo "$".Auto::importePorTipo(Precios::importePorTipo("mensual"), "mensual");
                 break;
+                case '/retiro//':
+                break;
             }
         } else {
             echo "No autorizado...";

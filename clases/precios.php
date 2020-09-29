@@ -59,10 +59,9 @@ class Precios extends FileManager
     public static function leerJson()
     {
         $lista = parent::jsonRead("./archivos/precios.json");
-        $lista = array();
 
         foreach ($lista as $datos) {
-
+            echo "lista del json";
             if (count((array)$datos) == 3) {
                 $precios = new Precios($datos->_hora, $datos->_estadia, $datos->_mensual);
                 return $precios;

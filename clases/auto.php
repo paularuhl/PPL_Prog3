@@ -5,10 +5,11 @@ class Auto extends FileManager
 {
     public $_patente;
     public $_fechaIngreso;
+    public $_fechaEgreso;
     public $_tipoEstadia;
     public $_emailUsuario;
 
-    public function __construct($patente, $tipoEstadia, $emailUsuario, $fechaIngreso = 0)
+    public function __construct($patente, $tipoEstadia, $emailUsuario, $fechaIngreso = 0, $fechaEgreso = 0)
     {
         if (!is_null($patente) && is_string($patente)) {
             $this->_patente = $patente;
@@ -23,6 +24,9 @@ class Auto extends FileManager
             $this->_fechaIngreso = date('d/m/y H:i');
         } else {
             $this->_fechaIngreso = $fechaIngreso;
+        }
+        if ($fechaEgreso != 0) {
+            $this->_fechaEgreso = $fechaEgreso;
         }
     }
 
